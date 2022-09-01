@@ -14,17 +14,17 @@
 
 package com.nttdata.bootcamp.banking.model.document;
 
-import com.nttdata.bootcamp.banking.util.General;
+import com.nttdata.bootcamp.banking.util.BankingFunction;
 import lombok.Data;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.function.Function;
 
 /**
  * Clase de tipo document para obtener o establecer los datos de cada atributo.
@@ -35,7 +35,17 @@ import java.util.Date;
 public class Account {
 
 
+    Function<Integer, String> addCeros= x -> x <10 ?"0"+x:String.valueOf(x);
+    BankingFunction<Integer, Integer, Integer, LocalDate> parseDate =
+            (day,month, year)
+                    -> LocalDate.parse(year +"-"+
+                    addCeros.apply(month) + "-" +
+                    addCeros.apply(day));
 
+    BankingFunction<Integer, Integer, Integer, Integer> calculateAge=
+            (day,month,year) ->
+                    Period.between(parseDate.Appply(day,month,year),
+                            LocalDate.now()).getDays();
     @Id
     private String id;
     private String accountNumber;
@@ -56,7 +66,7 @@ public class Account {
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
 
-       return timeElapsedOpen =General.calculateTiem(dateRegisterLocal.getDayOfMonth(),
+       return calculateAge.Appply(dateRegisterLocal.getDayOfMonth(),
                 dateRegisterLocal.getMonthValue(),
                 dateRegisterLocal.getYear());
 

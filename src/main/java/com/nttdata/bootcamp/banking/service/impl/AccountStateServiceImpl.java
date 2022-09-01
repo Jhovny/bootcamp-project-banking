@@ -14,9 +14,7 @@
 
 package com.nttdata.bootcamp.banking.service.impl;
 
-import com.nttdata.bootcamp.banking.model.dao.AccountDao;
 import com.nttdata.bootcamp.banking.model.dao.AccountStateDao;
-import com.nttdata.bootcamp.banking.model.document.Account;
 import com.nttdata.bootcamp.banking.model.document.AccountState;
 import com.nttdata.bootcamp.banking.service.AccountStateService;
 import org.slf4j.Logger;

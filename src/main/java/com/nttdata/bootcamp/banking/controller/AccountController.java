@@ -17,7 +17,6 @@ package com.nttdata.bootcamp.banking.controller;
 import com.nttdata.bootcamp.banking.model.document.Account;
 import com.nttdata.bootcamp.banking.service.AccountService;
 import com.nttdata.bootcamp.banking.service.ClientService;
-import com.nttdata.bootcamp.banking.util.ApiResponse;
 import com.nttdata.bootcamp.banking.util.Constant;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -28,10 +27,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.concurrent.CompletionService;
-
-import static com.nttdata.bootcamp.banking.util.Constant.NUMERO_UNO;
 
 /**
  * Clase de controladora para invocar a métodos CRUD con rest api.

@@ -14,10 +14,8 @@
 
 package com.nttdata.bootcamp.banking.service.impl;
 
-import com.nttdata.bootcamp.banking.model.dao.AccountDao;
 import com.nttdata.bootcamp.banking.model.dao.MovementDao;
 import com.nttdata.bootcamp.banking.model.document.Movement;
-import com.nttdata.bootcamp.banking.model.document.MovementType;
 import com.nttdata.bootcamp.banking.service.AccountService;
 import com.nttdata.bootcamp.banking.service.MovementService;
 import com.nttdata.bootcamp.banking.service.MovementTypeService;

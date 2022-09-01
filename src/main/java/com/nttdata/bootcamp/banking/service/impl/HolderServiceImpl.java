@@ -14,7 +14,6 @@
 
 package com.nttdata.bootcamp.banking.service.impl;
 
-import com.nttdata.bootcamp.banking.model.dao.AccountDao;
 import com.nttdata.bootcamp.banking.model.dao.HolderDao;
 import com.nttdata.bootcamp.banking.model.document.Holder;
 import com.nttdata.bootcamp.banking.service.AccountService;
